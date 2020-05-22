@@ -164,7 +164,11 @@ function clickGrilla(evento) {
         var nuevoNombre = document.getElementById("nombreMod").value;
         nuevoNombre = nuevoNombre.charAt(0).toUpperCase() + nuevoNombre.slice(1);
 
-        var nuevaFecha = document.getElementById("fechaMod").value;
+        nuevaFechaSinFormato = document.getElementById("fechaMod").value;
+        nuevaFechaSplit = nuevaFechaSinFormato.split("-");
+        nuevaFechaConFormato = nuevaFechaSplit[2]+"/"+nuevaFechaSplit[1]+"/"+nuevaFechaSplit[0];
+
+
         var nuevoTurno = document.querySelector('input[name="turnoMod"]:checked').value;
 
         if (nuevoTurno == 0) {
@@ -175,11 +179,11 @@ function clickGrilla(evento) {
 
         if (nuevoNombre.length > 6) {
 
-            modificarMateria(id, nuevoNombre, cuatrimestre, nuevaFecha, nuevoTurno);
+            modificarMateria(id, nuevoNombre, cuatrimestre, nuevaFechaConFormato, nuevoTurno);
 
             trClick.childNodes[0].innerHTML = nuevoNombre;
             trClick.childNodes[1].innerHTML = cuatrimestre;
-            trClick.childNodes[2].innerHTML = nuevaFecha;
+            trClick.childNodes[2].innerHTML = nuevaFechaConFormato;
             trClick.childNodes[3].innerHTML = nuevoTurno;
 
             cerrarGrilla();
