@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Parcial</title>
+    <script src="./js/funciones.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container-spinner" id="container-spinner">
+        <img src="./img/spinner.gif" alt="">
+    </div>
+    <div class="navbar">
+        <h2>Tabla de Materias</h2>
+        
+    </div>
+
+    <div class="backdrop" id="backdrop">
+        <div class="container-modificar" id="container-modificar">
+
+            <form class="form-modificar">
+                <button class="botonCerrar" type="button" id="btnCerrarMod" onclick="cerrarGrilla()">X</button>
+                <label for="nombreMod">Nombre:</label>
+                <input type="text" id="nombreMod" placeholder="Nombre materia" required>
+                <label for="cuatrimestreMod">Cuatrimestre:</label>
+                <br>
+                <select name="cuatrimestre" id="cuatrimestreMod">
+                    <option value="1" selected id="primerCuatri">1</option>
+                    <option value="2" id="segundoCuatri">2</option>
+                    <option value="3" id="tercerCuatri">3</option>
+                    <option value="4" id="cuartoCuatri">4</option>
+                </select>
+                <br>
+                <label for="fechaMod">Fecha de Final:</label>
+                <input type="date" id="fechaMod" required>
+                <label for="turnoMod">Turno:</label>
+                <br>
+                <input type="radio" id="maniana" value="0" name="turnoMod" checked>
+                <label for="maniana">Mañana</label>
+                <br>
+                <input type="radio" id="noche" value="1" name="turnoMod">
+                <label for="noche">Noche</label>
+                <div class="container-botones">
+                    <button class="botonEliminar" type="button" id="btnEliminar">Eliminar</button>
+                    <button class="botonModificar" type="button" id="btnModificar">Modificar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cuatrimestre</th>
+                <th>Fecha de final</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody id="tCuerpo"></tbody>
+    </table>
+</body>
+
+</html>
